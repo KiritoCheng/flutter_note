@@ -9,48 +9,57 @@ class _MyPage extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
     List menuTitles = [
-      '我的消息',
-      '阅读记录',
-      '我的博客',
-      '我的活动',
+      '我的便签',
+      '上传云端',
+      '历史记录',
+      '参与活动',
       '联系我们',
       '关于应用',
     ];
 
     List menuIcons = [
-      Icons.message,
-      Icons.print,
-      Icons.error,
-      Icons.send,
-      Icons.people,
-      Icons.person,
+      Icons.chat_bubble_outline,
+      Icons.call_split,
+      Icons.history,
+      Icons.all_inclusive,
+      Icons.mail_outline,
+      Icons.call_made,
     ];
 
     return SingleChildScrollView(
       child: Column(children: [
         // 用户界面
         Container(
+            decoration: BoxDecoration(
+              // 背景装饰
+              gradient: LinearGradient(
+                colors: [Theme.of(context).primaryColor, Colors.white10],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
             height: 200.0,
-            color: Colors.blue,
+            // color: Theme.of(context).primaryColor,
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 60,
-                    height: 60,
+                    // width: 60,
+                    // height: 60,
+                    padding: EdgeInsets.all(20.0),
+                    child: Text(
+                      "K",
+                      style: TextStyle(fontSize: 24, color: Colors.white),
+                    ),
                     decoration: BoxDecoration(
-                        //背景装饰
-                        gradient: RadialGradient(
-                            //背景径向渐变
-                            colors: [Colors.red, Colors.orange],
-                            center: Alignment.topLeft,
-                            radius: .98),
+                        color: Theme.of(context).primaryColor,
+                        shape: BoxShape.circle,
                         boxShadow: [
                           //卡片阴影
                           BoxShadow(
                               color: Colors.black54,
-                              offset: Offset(2.0, 2.0),
+                              offset: Offset(1.0, 1.0),
                               blurRadius: 4.0)
                         ]),
                   ),
@@ -59,8 +68,8 @@ class _MyPage extends State<MyPage> {
                     height: 10.0,
                   ),
                   Text(
-                    '点击头像登录',
-                    style: TextStyle(color: Colors.white),
+                    'KiritoChen',
+                    style: TextStyle(fontSize: 24, color: Colors.black87),
                   )
                 ],
               ),
@@ -76,7 +85,7 @@ class _MyPage extends State<MyPage> {
                 leading: Icon(menuIcons[index]),
                 //中间标题
                 title: Text(menuTitles[index]),
-                trailing: Icon(Icons.arrow_forward_ios),
+                trailing: Icon(Icons.chevron_right),
               );
             },
             //分隔线

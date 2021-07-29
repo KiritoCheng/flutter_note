@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_note/widgets/drawer.dart';
+import 'package:flutter_note/widgets/drawer/index.dart';
 import './memo/index.dart';
 
 // home主页
@@ -58,6 +58,7 @@ class _HomePage extends State<HomePage> {
 
       // 浮动按钮
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).primaryColor,
         onPressed: _addPress,
         tooltip: 'Increment',
         child: Icon(Icons.add),

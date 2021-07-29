@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_note/common/store/index.dart' show Store;
-import 'package:flutter_note/models/config_state_model.dart'
-    show ConfigModel, theme;
+import 'package:flutter_note/widgets/drawer/theme.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({
@@ -9,10 +7,6 @@ class MyDrawer extends StatelessWidget {
   }) : super(key: key);
 
   void _setLanguange() {}
-
-  void _setTheme(context) {
-    Store.value<ConfigModel>(context).$setTheme(theme["red"]);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,14 +46,7 @@ class MyDrawer extends StatelessWidget {
                     leading: const Icon(Icons.language),
                     title: const Text('更改语言'),
                   ),
-                  ListTile(
-                    onTap: () {
-                      this._setTheme(context);
-                    },
-                    leading: const Icon(Icons.palette),
-                    title: const Text('更改主题'),
-                    trailing: Icon(Icons.expand_more),
-                  ),
+                  SelectTheme()
                 ],
               ),
             ),

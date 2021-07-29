@@ -13,6 +13,7 @@ class _MemoInfoState extends State<MemoInfoPage> {
   String content = "";
   String img = "";
   int id;
+  bool hasRequested = false;
   // 初始化
   @override
   void initState() {
@@ -23,6 +24,7 @@ class _MemoInfoState extends State<MemoInfoPage> {
       Map<String, dynamic> args = ModalRoute.of(context).settings.arguments;
       MemoTypes _info = await MemoApi.fetchMemoInfo(args["id"]);
       this.setState(() {
+        this.hasRequested = true;
         this.id = args["id"];
         this.title = _info.title;
         this.content = _info.content;
@@ -48,9 +50,6 @@ class _MemoInfoState extends State<MemoInfoPage> {
 
   @override
   Widget build(BuildContext context) {
-    // if (this.title == "") {
-    //   return Scaffold(body: Skeleton());
-    // }
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 60,
@@ -59,34 +58,60 @@ class _MemoInfoState extends State<MemoInfoPage> {
           color: Colors.grey, //修改颜色
         ),
         elevation: 0,
-        actions: <Widget>[
-          //导航栏右侧菜单
-          IconButton(
-              icon: Icon(Icons.delete),
-              color: Colors.red,
-              onPressed: deleteMemo),
+        actions: this.hasRequested
+            ? <Widget>[
+                //导航栏右侧菜单
+                IconButton(
+                    icon: Icon(Icons.delete),
+                    color: Colors.red,
+                    onPressed: deleteMemo),
+              ]
+            : [],
+      ),
+      body: this.hasRequested ? _buildInfo() : _buildSkeleton(),
+    );
+  }
+
+  // 渲染股价屏
+  Widget _buildSkeleton() {
+    return Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Wrap(
+          spacing: 8.0,
+          runSpacing: 16.0,
+          children: [
+            Skeleton(
+              width: 200,
+            ),
+            Skeleton(
+              width: 400,
+              height: 300,
+            )
+          ],
+        ));
+  }
+
+  // 渲染详情页数据
+  Widget _buildInfo() {
+    return Scrollbar(
+        child: SingleChildScrollView(
+      padding: EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            this.title,
+            style: TextStyle(fontSize: 24),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            this.content,
+            style: TextStyle(fontSize: 16),
+          ),
         ],
       ),
-      body: Scrollbar(
-          child: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              this.title,
-              style: TextStyle(fontSize: 24),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              this.content,
-              style: TextStyle(fontSize: 16),
-            ),
-          ],
-        ),
-      )),
-    );
+    ));
   }
 }

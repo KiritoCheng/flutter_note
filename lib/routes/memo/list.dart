@@ -61,23 +61,25 @@ class MemoList extends StatelessWidget {
             }
 
             // 请求成功，显示数据
-            // List<MemoTypes>
             List<MemoTypes> list = snapshot.data;
-            return ListView.builder(
-                itemCount: list.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return MemoCard(
-                      onLongPress: (selected) {
-                        setEditingList(selected, list[index]);
-                      },
-                      onTap: (selected) {
-                        return handleTap(selected, list[index], context);
-                      },
-                      title: list[index].title,
-                      context: list[index].content,
-                      margin: EdgeInsets.fromLTRB(
-                          16, 16, 16, index == list.length - 1 ? 16 : 0));
-                });
+            return RefreshIndicator(
+              child: ListView.builder(
+                  itemCount: list.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return MemoCard(
+                        onLongPress: (selected) {
+                          setEditingList(selected, list[index]);
+                        },
+                        onTap: (selected) {
+                          return handleTap(selected, list[index], context);
+                        },
+                        title: list[index].title,
+                        context: list[index].content,
+                        margin: EdgeInsets.fromLTRB(
+                            16, 16, 16, index == list.length - 1 ? 16 : 0));
+                  }),
+              onRefresh: fetchMemoList,
+            );
           }
           // 请求未结束，显示loading
           return CircularProgressIndicator();

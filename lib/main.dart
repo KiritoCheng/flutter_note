@@ -16,7 +16,14 @@ class MyApp extends StatelessWidget {
           home: TabBarRoute(),
 
           // 获取Provide状态
-          theme: ThemeData(primaryColor: Color(model.themeColor)),
+          theme: ThemeData(
+            primaryColor: Color(model.themeColor),
+            primaryTextTheme:
+                TextTheme(headline6: TextStyle(color: Colors.white)),
+            primaryIconTheme: IconThemeData(
+              color: Colors.white,
+            ),
+          ),
 
           //名为"/"的路由作为应用的home(首页)
           // initialRoute: "add_memo",

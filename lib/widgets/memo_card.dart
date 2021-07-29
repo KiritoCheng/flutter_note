@@ -88,7 +88,11 @@ class _MemoCardState extends State<MemoCard> {
                     widget.context != ""
                         ? Container(
                             margin: EdgeInsets.only(top: 16),
-                            child: Text(widget.context))
+                            child: Text(
+                              widget.context,
+                              maxLines: 3,
+                              overflow: TextOverflow.ellipsis,
+                            ))
                         : Container()
                   ],
                 ))));

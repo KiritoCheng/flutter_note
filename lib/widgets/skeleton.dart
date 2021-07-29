@@ -30,13 +30,14 @@ class SkeletonState extends State<Skeleton>
         setState(() {});
       });
 
+    // 循环播放
     _controller.repeat();
   }
 
   @override
   void dispose() {
-    super.dispose();
     _controller.dispose();
+    super.dispose();
   }
 
   @override

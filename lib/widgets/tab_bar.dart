@@ -17,7 +17,6 @@ class _RouterState extends State<TabBarRoute> {
     {"name": "笔记", "route": HomePage()},
     {"name": "我的", "route": MyPage()}
   ];
-  // final List _routeNames = ['home_page', 'my_page'];
 
   // 点击菜单栏事件
   void _onItemTapped(int index) {

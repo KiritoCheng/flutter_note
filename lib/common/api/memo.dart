@@ -1,6 +1,4 @@
-// import 'package:flutter_note/models/task.dart';
 import 'package:flutter_note/common/types/memo_type.dart';
-
 import '../units/http.dart';
 
 class MemoApi {
@@ -8,7 +6,6 @@ class MemoApi {
   static const list = '/api/task/list';
   static Future<List<MemoTypes>> fetchMemoList() async {
     var res = await HttpRequest().makeRequest(MemoApi.list);
-
     // 获取返回的数据列表
     var rtn = res != null ? res["data"] : [];
 
