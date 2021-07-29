@@ -172,11 +172,11 @@ In your IDE, you should see **Chrome (web)** in the device pulldown.
 
 Creating a new project with web support is no different than [creating a new Flutter](https://flutter.dev/docs/get-started/test-drive) project for other platforms.
 
-##### IDE
+#### IDE
 
 Create a new app in your IDE and it automatically creates iOS, Android, and web versions of your app. (And macOS, too, if you’ve enabled desktop support.) From the device pulldown, select Chrome (web) and run your app to see it launch in Chrome.
 
-##### Command line
+#### Command line
 
 To create a new app that includes web support (in addition to mobile support), run the following commands, substituting myapp with the name of your project:
 
@@ -189,7 +189,7 @@ To serve your app from <font color=#0c5460>localhost</font> in Chrome, enter the
 
 <font color=#856404>Warning: Hot reload is not supported in a web browser Currently, Flutter supports hot restart, but not hot reload in a web browser.</font>
 
-##### Build
+#### Build
 
 Run the following command to generate a release build:
 
