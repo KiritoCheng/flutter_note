@@ -28,6 +28,8 @@ class MyApp extends StatelessWidget {
           //名为"/"的路由作为应用的home(首页)
           // initialRoute: "add_memo",
 
+          // 动态路由
+          // onGenerateRoute: generateRoute,
           //注册路由表
           routes: routes);
     });

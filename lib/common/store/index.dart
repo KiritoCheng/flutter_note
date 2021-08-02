@@ -6,6 +6,14 @@ class Store {
   static init({model, child, dispose = true}) {
     final providers = Providers()..provide(Provider.value(ConfigModel()));
     return ProviderNode(child: child, providers: providers, dispose: dispose);
+
+    // provider写法
+    // MultiProvider(
+    //   providers: [
+    //     ChangeNotifierProvider.value(value: Counter()),
+    //   ],
+    //   child: child,
+    // ),
   }
 
   //  通过Provide小部件获取状态封装
@@ -16,5 +24,8 @@ class Store {
   //  通过Provide.value<T>(context)获取封装
   static T value<T>(context, {scope}) {
     return Provide.value<T>(context, scope: scope);
+
+    // provider写法
+    // Provider.of<Counter>(context, listen: false).increment();
   }
 }
