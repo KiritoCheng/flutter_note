@@ -538,13 +538,22 @@ C:\path-to-flutter-sdk\bin\dart.bat
 
 ### Mac
 
-在终端运行一下命令即可,PATH_TO_FLUTTER_GIT_DIRECTORY 是你的 Flutter 安装目录.
+1. 进入用户的根目录
+2. 创建一个全局配置 rc 文件。在终端中输入`echo $SHELL`会告诉你使用的是哪个 SHELL。 如果你使用 Bash，编辑`$HOME/.bash_profile` 或者`$HOME/.bashrc`. 如果你使用 Z shell, 编辑 $HOME/.zshrc. 如果您使用不同的 shell，那么您的机器上的文件路径和文件名将会不同。
+3. 编辑配置的 rc 文件。`open -e 你的rc文件`
+4. 在 rc 文件中配置以下命令即可,PATH_TO_FLUTTER_GIT_DIRECTORY 是你的 Flutter 安装目录.
 
 ```
 export PATH=[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin:$PATH
 ```
 
-设置全局成功后, 运行 which flutter 校验即可.
+5. command+s 保存退出
+6. 设置全局成功后, 运行 which flutter 校验即可.
+7. **注意**: 如果你使用的是 zsh，结果配置了 bash_profile，关闭终端，重新启动终端时 ~/.bash_profile 将不会被加载，解决办法就是修改 ~/.zshrc 这样关闭终端再次启动时，~/.bash_profile 就会被再次加载，修改方法为以下命令：
+
+```
+echo 'source ~/.bash_profile' >> ~/.zshrc
+```
 
 ## 4. 运行 flutter doctor
 
@@ -895,6 +904,4 @@ Emacs 是一个轻量级编辑器，支持 Flutter 和 Dart。
 
         $ flutter run
 
-```
-
-```
+4.  想要使用相关依赖包时，请使用 flutter pub get.
