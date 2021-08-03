@@ -1,9 +1,9 @@
 # Flutter APP Demo
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了让我们更好的深入学习 Flutter 的架构与设计，在这里，我们制作出了一个以 Flutter 为基础框架的移动端 APP，该 APP 是一个简单的便签记事本，具备基本的增删改查功能，网络请求等，好方便我们对 Flutter 有一个系统的认识。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了让我们更好的深入学习 Flutter 的架构与设计，在这里，我们制作出了一个以 Flutter 为基础框架的移动端 APP，该 APP 是一个简单的便签记事本，具备基本的增删改查功能，网络请求等，好方便我们对 Flutter 有一个系统的认识。  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接下来，请看我们如何起步一个 Flutter 应用。
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In order to better understand the structure and design of Flutter, we created a mobile APP based on the Flutter framework. The APP is a simple notepad, with basic functions of adding, deleting, modifying and checking, network requests, etc.So that we have a systematic understanding of the Flutter.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In order to better understand the structure and design of Flutter, we created a mobile APP based on the Flutter framework. The APP is a simple notepad, with basic functions of adding, deleting, modifying and checking, network requests, etc.So that we have a systematic understanding of the Flutter.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Then, see how we get started with a Flutter app.
 
 <div align="center">
