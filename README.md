@@ -12,6 +12,8 @@
 
 </div>
 
+<hr/>
+
 ## <span id="englishDoc">System requirements</span>
 
 To install and run Flutter, your development environment must meet these minimum requirements:
@@ -46,6 +48,8 @@ You are now ready to run Flutter commands in the Flutter Console.
 
 ## Update your path
 
+### Windows
+
 If you wish to run Flutter commands in the regular Windows console, take these steps to add Flutter to the PATH environment variable:
 
 - From the Start search bar, enter ‘env’ and select **Edit environment variables for your account**.
@@ -68,6 +72,28 @@ C:\path-to-dart-sdk\bin\dart.exe :: this should go after `C:\path-to-flutter-sdk
 C:\path-to-flutter-sdk\bin\dart
 C:\path-to-flutter-sdk\bin\dart.bat```
 ````
+
+### Mac
+
+You can update your PATH variable for the current session at the command line, as shown in Get the Flutter SDK. You’ll probably want to update this variable permanently, so you can run flutter commands in any terminal session.
+
+The steps for modifying this variable permanently for all terminal sessions are machine-specific. Typically you add a line to a file that is executed whenever you open a new window. For example:
+
+1. Determine the path of your clone of the Flutter SDK. You need this in Step 3.
+2. Open (or create) the rc file for your shell. Typing `echo $SHELL` in your Terminal tells you which shell you’re using. If you’re using Bash, edit `$HOME/.bash_profile` or `$HOME/.bashrc`. If you’re using Z shell, edit `$HOME/.zshrc`. If you’re using a different shell, the file path and filename will be different on your machine.
+3. Add the following line and change `[PATH_OF_FLUTTER_GIT_DIRECTORY]` to be the path of your clone of the Flutter git repo:
+
+```
+    $ export PATH="$PATH:[PATH_OF_FLUTTER_GIT_DIRECTORY]/bin"
+```
+
+4. Run `source $HOME/.<rc file>` to refresh the current window, or open a new terminal window to automatically source the file.
+
+5. Verify that the `flutter/bin` directory is now in your PATH by running `$ echo $PATH`,Verify that the flutter command is available by running:
+
+```
+    which flutter
+```
 
 ## Run flutter doctor
 
@@ -483,6 +509,8 @@ To create your first Flutter app and test your setup, follow these steps:
 
 ## 3. 更新环境变量
 
+### WIndows
+
 如果你希望在常规 Windows 控制台中运行 Flutter 命令，请执行以下步骤将 Flutter 添加到 PATH 环境变量中:
 
 - 从开始搜索栏, 输入"环境变量"并选择**编辑账户的环境变量**。
@@ -499,14 +527,24 @@ To create your first Flutter app and test your setup, follow these steps:
 <text style="font-weight:bold;">提示：</text>在Flutter的1.19.0开发发布版中，Flutter SDK在Flutter中旁边包含了dart命令，这样您就可以更容易地运行dart命令行程序。下载Flutter SDK也会附带下载Dart的兼容版本，但如果您单独下载了Dart SDK，请确保在您的路径中首先下载Dart的Flutter版本，因为这两个版本可能不兼容。下面的命令告诉您Flutter和Dart命令是否来自同一个bin目录，以此进行兼容。</font>
 </td></tr></table>
 
-````
+```
 C:\> where flutter dart
 C:\path-to-flutter-sdk\bin\flutter
 C:\path-to-flutter-sdk\bin\flutter.bat
 C:\path-to-dart-sdk\bin\dart.exe :: this should go after `C:\path-to-flutter-sdk\bin\ commands`
 C:\path-to-flutter-sdk\bin\dart
-C:\path-to-flutter-sdk\bin\dart.bat```
-````
+C:\path-to-flutter-sdk\bin\dart.bat
+```
+
+### Mac
+
+在终端运行一下命令即可,PATH_TO_FLUTTER_GIT_DIRECTORY 是你的 Flutter 安装目录.
+
+```
+export PATH=[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin:$PATH
+```
+
+设置全局成功后, 运行 which flutter 校验即可.
 
 ## 4. 运行 flutter doctor
 
@@ -589,7 +627,7 @@ macOS 支持在 iOS、Android 和 web 上开发 Flutter 应用程序(技术预�
 
 <table><tr><td bgcolor=#d1ecf1>
 <font color=#0c5460>
-<text style="font-weight:bold;">提示：</text> 
+<text style="font-weight:bold;">提示：</text>
  Flutter依赖于Android Studio的完整安装来提供它对Android平台的依赖。不过，你可以在许多编辑器中编写Flutter应用程序;后面的步骤将对此进行讨论。
  </font></td></tr></table>
 
@@ -856,3 +894,7 @@ Emacs 是一个轻量级编辑器，支持 Flutter 和 Dart。
 3.  要在模拟器中启动应用程序，请确保模拟器正在运行并输入:
 
         $ flutter run
+
+```
+
+```
