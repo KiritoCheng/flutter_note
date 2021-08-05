@@ -478,8 +478,8 @@ To create your first Flutter app and test your setup, follow these steps:
 
 ### 正常安装
 
-&nbsp;&nbsp;&nbsp;1.下载以下安装包，以获得 Flutter SDK 的最新稳定版本:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[flutter_windows_2.2.3-stable.zip](https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_2.2.3-stable.zip)
+&nbsp;&nbsp;&nbsp;1.下载以下安装包，以获得 Flutter SDK 的最新稳定版本:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[flutter_windows_2.2.3-stable.zip](https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_2.2.3-stable.zip)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;要了解其他发布渠道和更早的版本，请参阅[SDK 发布页面](https://flutter.dev/docs/development/tools/sdk/releases)。
 
 &nbsp;&nbsp;&nbsp;2.提取上面下载的 zip 文件并解压到 SDK 所需的安装位置（例如：C:\Users\\\<your-user-name>\Documents）
